@@ -1,8 +1,17 @@
-package com.learn.newlearn1;
-
-
 import java.util.Stack;
 
+public class MakeQueueWithTwoStack{
+    public static void main(String[] args) {
+        DoubleStackQueue<Integer> qu = new DoubleStackQueue<>();
+
+        qu.newStack.add(1);
+        qu.newStack.add(2);
+        qu.newStack.add(3);
+        qu.newStack.add(4);
+        System.out.println(qu.pop());
+        System.out.println(qu.peek());
+    }
+}
 class DoubleStackQueue<T>{
 
     Stack<T> newStack, oldStack;
@@ -32,19 +41,5 @@ class DoubleStackQueue<T>{
     public T peek(){
         shiftData();
         return oldStack.peek();
-    }
-}
-
-public class PlayGround {
-
-    public static void main(String[] args) {
-        DoubleStackQueue<Integer> qu = new DoubleStackQueue<>();
-
-        qu.newStack.add(1);
-        qu.newStack.add(2);
-        qu.newStack.add(3);
-        qu.newStack.add(4);
-        System.out.println(qu.pop());
-        System.out.println(qu.peek());
     }
 }
